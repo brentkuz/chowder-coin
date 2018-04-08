@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color:beige
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +22,20 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.about-col{
+    padding:15px;
+    border-radius:5px;
+    box-sizing:border-box;
+    width:100%;
+}
+.green-back{
+    background-color:lightgreen
+}
+.blue-back{
+    background-color:lightblue
+}
+.yellow-back{
+    background-color:lightgoldenrodyellow
 }

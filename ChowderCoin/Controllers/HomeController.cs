@@ -20,10 +20,13 @@ namespace ChowderCoin.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult RatesConversion()
         {
-            ViewBag.Message = "Your contact page.";
-
+            return View();
+        }
+  
+        public ActionResult Store()
+        {
             return View();
         }
     }

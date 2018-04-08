@@ -1,7 +1,60 @@
 ﻿@{
     ViewBag.Title = "About";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="about-col green-back">
+            <h2>What is ChowderCoin?</h2>
+            <p> 
+                ChowderCoin is an emerging alternative currency that is backed by one of mankinds most valuable assets - chowder.
+                Being a commodity currency and backed, ChowderCoin is inherently stable in value over time as can be seen in the chart below.
+            </p>
+            <a href="~/Content/images/chowder-graph.png" target="_blank">
+                <img src="~/Content/images/chowder-graph.png" alt="graph" style="width:100%;"/>
+            </a>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="col-sm-4 about-col blue-back">
+            <div>
+                <h2>How does it work?</h2>
+                <p>
+                    ChowderCoin is simple, however, there are a few little things that you should consider before diversifying into it.
+                    Since the coins are made from real chowder, they must be kept frozen at all times. This means you should have an adequately
+                    large freezer for home storage. You will also likely need a way to transport your ChowderCoins. See below for commonly used options.
+                </p>
+            </div>
+            <div>
+                <figure style="width:50%;padding:5px;float:left;">
+                    <a href="~/Content/images/cooler.jpg">
+                        <img src="~/Content/images/cooler.jpeg" alt="cooler" style="width:100%;" />
+                    </a>
+                    <figcaption><i>Option 1: Cooler</i></figcaption>
+                </figure>
+                <figure style="width:50%;padding:5px;float:left;">
+                    <a href="~/Content/images/ref-truck.jpg">
+                        <img src="~/Content/images/ref-truck.jpg" style="width:100%;" />
+                    </a>
+                    <figcaption><i>Option 2: Refrigerated truck</i></figcaption>
+                </figure>
+            </div>
+            <div style="clear:both;">
+                <p>
+                    Once you figure out these details, the next step is to navigate our <a href="@Url.Action("RatesConversion", "Home")">Rate/Conversion</a> page and 
+                    and use our user-friendly tools to determine how much and what type of ChowderCoins to buy. After that, you can make your secure purchases in our <a href="@Url.Action("Store", "Home")">Store</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+@*<div class="row">
+    <div class="col-sm-6">
+        <div class="col-sm-4 about-col yellow-back">
+            <h2>History</h2>
+        </div>
+    </div>
+</div>*@
+
+
+
