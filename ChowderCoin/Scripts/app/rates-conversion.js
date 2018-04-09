@@ -38,24 +38,45 @@ $(function () {
         }
     });
     
-    var conversionApp = new Vue({
-        el: "#conversionApp",
+    var chowderToUSDApp = new Vue({
+        el: "#chowderToUSDApp",
         data: {
             types: types,
             selectedType: 1,
             denoms: denominations,
             selectedDenom: 1,
             quantity: 0,
-            result1: (0).toFixed(2)
+            result: (0).toFixed(2)
         },
         methods: {
             submitForm: function (e) {
                 var perUnitPrice = _.find(rates, { Id: this.selectedType }).Rate;
-
-                this.result1 = (perUnitPrice * this.selectedDenom * this.quantity).toFixed(2);
+                this.result = (perUnitPrice * this.selectedDenom * this.quantity).toFixed(2);
 
                 e.preventDefault();
             }
         }
-    })
+    });
+
+    var usdToChowderApp = new Vue({
+        el: "#usdToChowderApp",
+        data: {
+            types: types,
+            selectedType: 1,
+            denoms: denominations,
+            selectedDenom: 1,
+            amount: (0).toFixed(2),
+            result: 0
+        },
+        methods: {
+            submitForm: function (e) {
+                var perUnitPrice = _.find(rates, { Id: this.selectedType }).Rate;
+                if (this.amount > .01) {
+                    this.result = (this.amount / (this.selectedDenom * perUnitPrice)).toFixed(0);
+                }
+
+                e.preventDefault();
+            }
+        }
+    });
 }); 

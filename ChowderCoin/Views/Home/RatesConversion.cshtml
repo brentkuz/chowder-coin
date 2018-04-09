@@ -43,11 +43,11 @@
         </div>
     </div>
     <div class="col-sm-7">
-        <h3>Conversion Calculator</h3>
+        <h3>Conversion Calculators</h3>
         <span><i>*Conversions are based on current market prices</i></span>
-        <div id="conversionApp" class="red-back" style="padding:10px;border-radius:5px;">
-            <h4>Chowder to USD</h4>
-            <form  @@submit="submitForm" action="#" method="post">
+        <div id="chowderToUSDApp" class="red-back" style="padding:10px;border-radius:5px;">
+            <h4>ChowderCoin to USD</h4>
+            <form @@submit="submitForm" action="#" method="post">
                 <div class="row" style="margin-bottom:25px;">
                     <div class="col-sm-4">
                         <label class="inline">Chowder:</label>
@@ -60,10 +60,10 @@
                         <select v-model="selectedDenom" class="form-control inline" style="width:auto;">
                             <option v-for="d in denoms" v-bind:value="d.value">{{d.text}}</option>
                         </select>
-                    </div>  
+                    </div>
                     <div class="col-sm-4">
                         <label class="inline">Quantity</label>
-                        <input type="number" v-model="quantity" class="form-control inline" style="width:auto;max-width:100px;" required min="1"/>
+                        <input type="number" v-model="quantity" class="form-control inline" style="width:auto;max-width:100px;" required min="1" />
                     </div>
                 </div>
                 <div class="row" style="margin-bottom:10px;">
@@ -73,11 +73,42 @@
                     </div>
                     <div class="col-sm-4 ">
                         <label class="inline">Price: $</label>
-                        <input type="text" v-model="result1" class="form-control inline" style="max-width:100px;" />
+                        <input type="text" v-model="result" class="form-control inline" style="max-width:100px;" />
                     </div>
                 </div>
-             
-                
+            </form>
+        </div>
+        <div id="usdToChowderApp" class="green-back" style="padding:10px;border-radius:5px;margin-top:10px;">
+            <h4>USD to ChowderCoin</h4>
+            <form @@submit="submitForm" action="#" method="post">
+                <div class="row" style="margin-bottom:25px;">
+                    <div class="col-sm-4">
+                        <label class="inline">USD: $</label>
+                        <input type="number" v-model="amount" class="form-control inline" style="max-width:100px;" required />
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="inline">Chowder:</label>
+                        <select v-model="selectedType" class="form-control inline" style="width:auto;">
+                            <option v-for="t in types" v-bind:value="t.value">{{t.text}}</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="inline">Denomination:</label>
+                        <select v-model="selectedDenom" class="form-control inline" style="width:auto;">
+                            <option v-for="d in denoms" v-bind:value="d.value">{{d.text}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom:10px;">
+
+                    <div class="col-sm-4 col-sm-offset-4 text-right">
+                        <button type="submit" class="btn btn-primary">Convert</button>
+                    </div>
+                    <div class="col-sm-4 ">
+                        <label class="inline">Quantity:</label>
+                        <input type="text" v-model="result" class="form-control inline" style="max-width:100px;" />
+                    </div>
+                </div>
             </form>
         </div>
     </div>
