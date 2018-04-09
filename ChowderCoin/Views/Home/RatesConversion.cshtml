@@ -3,5 +3,90 @@
     ViewBag.Title = "RatesConversion";
 }
 
-<h2>Rates & Conversions</h2>
 
+<div class="row">
+    <div class="col-sm-5">
+        <h3>Current Prices</h3>
+        <span><i>*Prices are per ounce</i></span>
+        <div id="ratesApp" class="blue-back" style="padding:10px;border-radius:5px;">
+            <div class="mobile-table">
+                <div class="row mobile-table-header">
+                    <div class="col-sm-4">
+                        <label>Chowder Type</label>
+                    </div>
+                    <div class="col-sm-4 text-center">
+                        <label>Current Price (USD)</label>
+                    </div>
+                    <div class="col-sm-4 text-center">
+                        <label>Percent Change</label>
+                    </div>                    
+                </div>
+                <hr class="fat" style="border-color:black"/>
+                <div class="mobile-table-body">
+                    <div v-for="rate in rates">
+                        <div class="row mobile-table-row">
+                            <div class="col-sm-4">
+                                {{rate.Type}}
+                            </div>
+                            <div class="col-sm-4 text-center">
+                                {{rate.Rate}}
+                            </div>
+                            <div class="col-sm-4 text-center">
+                                <span v-bind:class="{ 'green-text': (rate.Change > 0), 'red-text': (rate.Change < 0) }"><span v-if="rate.Change > 0">+</span>{{rate.Change}}</span>
+                            </div>
+                        </div>
+                        <hr class="mini" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-7">
+        <h3>Conversion Calculator</h3>
+        <span><i>*Conversions are based on current market prices</i></span>
+        <div id="conversionApp" class="red-back" style="padding:10px;border-radius:5px;">
+            <h4>Chowder to USD</h4>
+            <form  @@submit="submitForm" action="#" method="post">
+                <div class="row" style="margin-bottom:25px;">
+                    <div class="col-sm-4">
+                        <label class="inline">Chowder:</label>
+                        <select v-model="selectedType" class="form-control inline" style="width:auto;">
+                            <option v-for="t in types" v-bind:value="t.value">{{t.text}}</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="inline">Denomination:</label>
+                        <select v-model="selectedDenom" class="form-control inline" style="width:auto;">
+                            <option v-for="d in denoms" v-bind:value="d.value">{{d.text}}</option>
+                        </select>
+                    </div>  
+                    <div class="col-sm-4">
+                        <label class="inline">Quantity</label>
+                        <input type="number" v-model="quantity" class="form-control inline" style="width:auto;max-width:100px;" required min="1"/>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom:10px;">
+
+                    <div class="col-sm-4 col-sm-offset-4 text-right">
+                        <button type="submit" class="btn btn-primary">Convert</button>
+                    </div>
+                    <div class="col-sm-4 ">
+                        <label class="inline">Price: $</label>
+                        <input type="text" v-model="result1" class="form-control inline" style="max-width:100px;" />
+                    </div>
+                </div>
+             
+                
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    console.log("in view");
+
+</script>
+
+@section scripts{
+    <script src="~/Scripts/app/rates-conversion.js"></script>
+}

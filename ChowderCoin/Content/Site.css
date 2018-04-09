@@ -39,3 +39,33 @@ textarea {
 .yellow-back{
     background-color:lightgoldenrodyellow
 }
+.red-back {
+    background-color: lightsalmon
+}
+hr.mini{
+    margin:0
+}
+hr.fat {
+    margin: 0;
+    border-width: 2px;
+}
+.inline{display:inline;}
+.inline-block{display:inline-block;}
+
+/*Mobile Table*/
+.mobile-table{
+    width:100%;
+    border-radius:3px;
+}
+.mobile-table-header{
+    padding:0 5px;
+}
+.mobile-table-row{
+    padding:10px 5px;
+}
+.red-text{
+    color:red;
+}
+.green-text{
+    color:green;
+}
