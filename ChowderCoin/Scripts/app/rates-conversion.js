@@ -72,7 +72,7 @@ $(function () {
             submitForm: function (e) {
                 var perUnitPrice = _.find(rates, { Id: this.selectedType }).Rate;
                 if (this.amount > .01) {
-                    this.result = (this.amount / (this.selectedDenom * perUnitPrice)).toFixed(0);
+                    this.result = Math.floor(this.amount / (this.selectedDenom * perUnitPrice));
                 }
 
                 e.preventDefault();
