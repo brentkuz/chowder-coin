@@ -73,7 +73,7 @@
                     </div>
                     <div class="col-sm-4 ">
                         <label class="inline">Price: $</label>
-                        <input type="text" v-model="result" class="form-control inline" style="max-width:100px;" />
+                        <input type="text" v-model="result" class="form-control inline" style="max-width:100px;" readonly/>
                     </div>
                 </div>
             </form>
@@ -106,17 +106,13 @@
                     </div>
                     <div class="col-sm-4 ">
                         <label class="inline">Quantity:</label>
-                        <input type="text" v-model="result" class="form-control inline" style="max-width:100px;" />
+                        <input type="text" v-model="result" class="form-control inline" style="max-width:100px;" readonly/>
                     </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
-<script>
-    console.log("in view");
-
-</script>
 
 @section scripts{
     <script src="~/Scripts/app/rates-conversion.js"></script>
