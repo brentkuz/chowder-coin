@@ -52,13 +52,13 @@
                     <div class="col-sm-4">
                         <label class="inline">Chowder:</label>
                         <select v-model="selectedType" class="form-control inline" style="width:auto;">
-                            <option v-for="t in types" v-bind:value="t.value">{{t.text}}</option>
+                            <option v-for="t in types" v-bind:value="t.Value">{{t.Text}}</option>
                         </select>
                     </div>
                     <div class="col-sm-4">
                         <label class="inline">Denomination:</label>
                         <select v-model="selectedDenom" class="form-control inline" style="width:auto;">
-                            <option v-for="d in denoms" v-bind:value="d.value">{{d.text}}</option>
+                            <option v-for="d in denoms" v-bind:value="d.Value">{{d.Text}}</option>
                         </select>
                     </div>
                     <div class="col-sm-4">
@@ -89,13 +89,13 @@
                     <div class="col-sm-4">
                         <label class="inline">Chowder:</label>
                         <select v-model="selectedType" class="form-control inline" style="width:auto;">
-                            <option v-for="t in types" v-bind:value="t.value">{{t.text}}</option>
+                            <option v-for="t in types" v-bind:value="t.Value">{{t.Text}}</option>
                         </select>
                     </div>
                     <div class="col-sm-4">
                         <label class="inline">Denomination:</label>
                         <select v-model="selectedDenom" class="form-control inline" style="width:auto;">
-                            <option v-for="d in denoms" v-bind:value="d.value">{{d.text}}</option>
+                            <option v-for="d in denoms" v-bind:value="d.Value">{{d.Text}}</option>
                         </select>
                     </div>
                 </div>
@@ -115,5 +115,5 @@
 </div>
 
 @section scripts{
-    <script src="~/Scripts/app/rates-conversion.js"></script>
+    <script src="~/Scripts/app/rates-conversion-app.js"></script>
 }

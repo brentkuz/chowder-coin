@@ -28,6 +28,12 @@
                     <li>@Html.ActionLink("Store", "Store", "Home")</li>
                 </ul>
             </div>
+            <div id="cartApp">
+                <a href="javascript:void(0)" v-on:click="checkout">
+                    <img src="~/Content/images/cart-icon.png" width="50" />
+                    <span class="badge badge-light">{{count}}</span>
+                </a>
+            </div>
         </div>
     </div>
     <div class="container body-content">
@@ -39,10 +45,15 @@
             <p>&copy; @DateTime.Now.Year - ChowderCoin Group LLC</p>
         </footer>
     </div>
+    <div id="checkoutApp">
+
+    </div>
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/vendor")
+    @Scripts.Render("~/bundles/app")
     @RenderSection("scripts", required: false)
 </body>
 </html>

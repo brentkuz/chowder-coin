@@ -151,6 +151,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\cart-icon.png" />
     <Content Include="Content\images\chowder-graph.png" />
     <Content Include="Content\images\coin.gif" />
     <Content Include="Content\images\cooler.jpeg" />
@@ -160,8 +161,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\app\rates-conversion.js" />
-    <Content Include="Scripts\app\store.js" />
+    <Content Include="Scripts\app\cart-app.js" />
+    <Content Include="Scripts\app\checkout-app.js" />
+    <Content Include="Scripts\app\common.js" />
+    <Content Include="Scripts\app\models.js" />
+    <Content Include="Scripts\app\rates-conversion-app.js" />
+    <Content Include="Scripts\app\store-app.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">

@@ -1,35 +1,23 @@
 ﻿/// <reference path="../vue.js" />
 
-function Rate(id, type, rate, percentChange) {
-    this.Id = id;
-    this.Type = type;
-    this.Rate = rate;
-    this.Change = percentChange;
-};
+
 
 
 
 $(function () {
     console.log("load RatesConversion");
 
-    var rates = [
-        new Rate(1, "Clam", .55, 18),
-        new Rate(2, "Corn", .31, -7),
-        new Rate(3, "Potato", .34, 3),
-        new Rate(4, "Seafood", .63, 13)
-    ];
+    var valServ = app.Services.ValuesService;
+
+    var rates = valServ.getRates();
 
     var types = [];
     rates.forEach((val, idx) => {
         types.push({ value: val.Id, text: val.Type });
     })
 
-    var denominations = [
-        { value: 1, text: "1 oz" },
-        { value: 5, text: "5 oz" },
-        { value: 10, text: "10 oz" }
-    ];
 
+    var denominations = valServ.getDenominations();
 
     var ratesApp = new Vue({
         el: "#ratesApp",
