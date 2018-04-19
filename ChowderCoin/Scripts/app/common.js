@@ -1,10 +1,9 @@
-﻿var app = app || {};
+﻿//namespace
+var app = app || {};
 
 (function ($) {
     console.log("load common")
-    //namespace
     
-
     //pub/sub
     var topics = {};
 

@@ -13,15 +13,14 @@ $(function () {
             $.Topic("cart.removeItem").subscribe(this.removeItem);
         },
         methods: {
-            addItem: function (cnt) {
-                if(cnt > 0)
-                    this.count += cnt;
+            addItem: function () {
+                this.count++;
             },
-            removeItem: function (cnt) {
-                if (this.count - cnt < 0)
+            removeItem: function () {
+                if (this.count - 1 < 0)
                     this.count = 0;
                 else
-                    this.count -= cnt;
+                    this.count--;
             },
             checkout: function () {  
                 $.Topic("checkout.openCheckout").publish();

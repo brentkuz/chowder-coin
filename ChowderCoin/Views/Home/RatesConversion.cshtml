@@ -12,27 +12,27 @@
             <div class="mobile-table">
                 <div class="row mobile-table-header">
                     <div class="col-sm-4">
-                        <label>Chowder Type</label>
+                        <label>Item</label>
                     </div>
                     <div class="col-sm-4 text-center">
-                        <label>Current Price (USD)</label>
+                        <label>Unit Price (USD)</label>
                     </div>
                     <div class="col-sm-4 text-center">
-                        <label>Percent Change</label>
+                        <label>Quantity</label>
                     </div>                    
                 </div>
                 <hr class="fat" style="border-color:black"/>
                 <div class="mobile-table-body">
-                    <div v-for="rate in rates">
+                    <div v-for="item in items">
                         <div class="row mobile-table-row">
                             <div class="col-sm-4">
-                                {{rate.Type}}
+                                {{item.Title}}
                             </div>
                             <div class="col-sm-4 text-center">
-                                {{rate.Rate}}
+                                {{item.Price}}
                             </div>
                             <div class="col-sm-4 text-center">
-                                <span v-bind:class="{ 'green-text': (rate.Change > 0), 'red-text': (rate.Change < 0) }"><span v-if="rate.Change > 0">+</span>{{rate.Change}}</span>
+                                {{item.Count}}
                             </div>
                         </div>
                         <hr class="mini" />

@@ -21,9 +21,7 @@ $(function () {
             items.push(item);
         })
     });
-
-    alert(JSON.stringify(items));
-
+    
     var checkoutApp = new Vue({
         el: "#storeApp",
         data: {
@@ -34,7 +32,8 @@ $(function () {
         },
         methods: {
             addItem: function (item) {
-
+                $.Topic("checkout.addItem").publish(item);
+                $.Topic("cart.addItem").publish();
             }
         }
     })

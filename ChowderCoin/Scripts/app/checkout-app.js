@@ -13,7 +13,8 @@ $(function () {
             total: 0
         },
         created: function () {
-            $.Topic("checkout.openCheckout").subscribe(this.openCheckout)
+            $.Topic("checkout.openCheckout").subscribe(this.openCheckout);
+            $.Topic("checkout.addItem").subscribe(this.addItem);
         },
         methods: {
             openCheckout: function () {
@@ -23,6 +24,7 @@ $(function () {
                 this.items.push(item);
                 var price = (item.Price * item.Count).toFixed(2);
                 this.total += price;
+                alert(this.total);
             },
             removeItem: function (item) {
                 this.items.remove(item);

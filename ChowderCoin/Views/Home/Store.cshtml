@@ -5,11 +5,44 @@
 
 
 <div id="storeApp" class="row">
-    <div class="col-sm-10 col-sm-offset-2">
+    <div class="col-sm-10 col-sm-offset-1">
         <h2>Store</h2>
-        
+        <div class="mobile-table">
+            <div class="row mobile-table-header">
+                <div class="col-sm-3">
+                    <label>Item</label>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <label>Unit Price (USD)</label>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <label>Quantity</label>
+                </div>
+                <div class="col-sm-3">
+                </div>
+            </div>
+            <hr class="fat" style="border-color:black" />
+            <div class="mobile-table-body">
+                <div v-for="item in items">
+                    <div class="row mobile-table-row">
+                        <div class="col-sm-3">
+                            {{item.Title}}
+                        </div>
+                        <div class="col-sm-3 text-center">
+                            ${{item.Price}}
+                        </div>
+                        <div class="col-sm-3 text-center">
+                            <input type="number" v-model="item.Count" min="1" class="form-control" style="max-width:100px;"/>
+                        </div>
+                        <div class="col-sm-3">
+                            <button class="btn btn-primary" v-on:click="addItem(item)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <hr class="mini" />
+                </div>
+            </div>
+        </div>
     </div>
-   
 </div>
 
 
