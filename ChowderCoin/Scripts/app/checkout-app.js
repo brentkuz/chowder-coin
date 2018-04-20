@@ -16,18 +16,20 @@ $(function () {
         },
         methods: {
             openCheckout: function () {
-                
+                $("#checkoutModal").modal();
             },
             addItem: function (item) {
                 this.items.push(item);
                 var price = (item.Price * item.Count).toFixed(2);
-                this.total += price;
-                alert(this.total);
+                this.total = Number(Number(this.total) + price);                
             },
             removeItem: function (item) {
                 this.items.remove(item);
                 var price = (item.Price * item.Count).toFixed(2);
-                this.total -= price;
+                this.total = Number(Number(this.total) - price);
+
+                //remove from cart
+                $.Topic("cart.removeItem").publish();
             },
             calcTotal: function () {
                 this.total = _.reduce(this.items, function (sum, n) {
