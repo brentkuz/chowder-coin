@@ -10,10 +10,11 @@ $(function () {
     var valServ = app.Services.ValuesService;
 
     var rates = valServ.getRates();
+   
 
     var types = [];
     rates.forEach((val, idx) => {
-        types.push({ value: val.Id, text: val.Type });
+        types.push({ Value: val.Id, Text: val.Type });
     })
 
 

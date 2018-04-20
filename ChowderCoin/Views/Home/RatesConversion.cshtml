@@ -15,24 +15,24 @@
                         <label>Item</label>
                     </div>
                     <div class="col-sm-4 text-center">
-                        <label>Unit Price (USD)</label>
+                        <label>Price (USD)</label>
                     </div>
                     <div class="col-sm-4 text-center">
-                        <label>Quantity</label>
+                        <label>% Change</label>
                     </div>                    
                 </div>
                 <hr class="fat" style="border-color:black"/>
                 <div class="mobile-table-body">
-                    <div v-for="item in items">
+                    <div v-for="r in rates">
                         <div class="row mobile-table-row">
                             <div class="col-sm-4">
-                                {{item.Title}}
+                                {{r.Type}}
                             </div>
                             <div class="col-sm-4 text-center">
-                                {{item.Price}}
+                                {{r.Rate}}
                             </div>
-                            <div class="col-sm-4 text-center">
-                                {{item.Count}}
+                            <div class="col-sm-4 text-center" v-bind:class="{ 'green-text': r.Change > 0, 'red-text': r.Change < 0}">
+                                <span v-if="r.Change > 0">+</span>{{r.Change}}
                             </div>
                         </div>
                         <hr class="mini" />

@@ -4,8 +4,6 @@
 $(function () {
     console.log("load checkout");
 
-    
-
     var checkoutApp = new Vue({
         el: "#checkoutApp",
         data: {
