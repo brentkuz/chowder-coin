@@ -47,7 +47,7 @@
     </div>
 
     <div id="checkoutApp">
-        <form>
+        <form id="checkoutForm" @@submit="submitForm" action="" method="post">
             <div class="modal fade" id="checkoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
                 <div class="modal-dialog" role="document" style="width:800px;">
                     <div class="modal-content">
@@ -58,11 +58,42 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <ol>
-                                <li v-for="i in items" class="line-item">
-                                    {{i.Title}} &nbsp;&nbsp;&nbsp; x {{i.Count}}
-                                </li>
-                            </ol>
+                            <div class="row">
+                                <button type="reset" class="btn-link red-text"  style="float:right;" v-on:click="reset()">Reset</button>
+                                <div class="col-sm-6">
+                                    <h4>Items</h4>
+                                    <ol>
+                                        <li v-for="i in items" class="line-item">
+                                            {{i.Title}} &nbsp; x {{i.Count}}
+                                            <button  type="button" class="btn-link red-text" v-on:click="removeItem(i)">Remove</button>
+                                        </li>
+                                    </ol>
+                                </div>
+                                <div class="col-sm-6">
+                                    <h4>Payment Info</h4>
+                                    <div style="margin-bottom:5px;">
+                                        <label>Name: </label>
+                                        <input type="text" class="form-control" required/>
+                                    </div>
+                                    <div style="margin-bottom:5px;">
+                                        <label>SSN: </label> 
+                                        <input type="text" class="form-control" required/>
+                                    </div>
+                                    <div style="margin-bottom:5px;">
+                                        <label>Bank Routing: </label>
+                                        <input type="text" class="form-control" required/>
+                                    </div>
+                                    <div style="margin-bottom:5px;">
+                                        <label>Credit Card #: </label> 
+                                        <input type="text" class="form-control" required/>
+                                    </div>
+                                    <div style="margin-bottom:5px;">
+                                        <label>CSC: </label>
+                                        <input type="text" class="form-control" required/>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>

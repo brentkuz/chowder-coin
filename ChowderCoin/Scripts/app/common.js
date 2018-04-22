@@ -45,4 +45,17 @@ var app = app || {};
         }
     };
 
+    app.Services.Session = {
+        get: function (key) {
+            var s = window.sessionStorage[key];
+            return s == null ? null : JSON.parse(s);            
+        },
+        set: function (key, obj) {
+            window.sessionStorage[key] = JSON.stringify(obj);
+        },
+        reset: function (key) {
+            window.sessionStorage[key] = null;
+        }
+    }
+
 })(jQuery);

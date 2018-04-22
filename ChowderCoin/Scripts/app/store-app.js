@@ -1,4 +1,4 @@
-﻿/// <reference path="../jquery-1.10.2.js" />
+﻿
 /// <reference path="common.js" />
 /// <reference path="models.js" />
 
@@ -22,7 +22,7 @@ $(function () {
         })
     });
     
-    var checkoutApp = new Vue({
+    var storeApp = new Vue({
         el: "#storeApp",
         data: {
             items: items
