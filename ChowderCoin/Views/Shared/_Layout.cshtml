@@ -3,9 +3,12 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - ChowderCoin</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/vendor")
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -49,7 +52,7 @@
     <div id="checkoutApp">
         <form id="checkoutForm" @@submit="submitForm" action="" method="post">
             <div class="modal fade" id="checkoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-                <div class="modal-dialog" role="document" style="width:800px;">
+                <div class="modal-dialog" role="document" >
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Checkout</h5>
@@ -105,9 +108,7 @@
         </form>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/vendor")
+
     @Scripts.Render("~/bundles/app")
     @RenderSection("scripts", required: false)
 </body>

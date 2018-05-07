@@ -33,7 +33,7 @@ $(function () {
         methods: {
             openCheckout: function () {
                 if(this.items.length > 0)
-                    $("#checkoutModal").modal();
+                    $("#checkoutModal").modal("show");
             },
             addItem: function (item) {
                 this.items.push(item);
