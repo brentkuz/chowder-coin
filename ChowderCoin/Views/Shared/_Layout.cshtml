@@ -3,12 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <title>@ViewBag.Title - ChowderCoin</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/vendor")
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -32,7 +31,7 @@
                 </ul>
             </div>
             <div id="cartApp" style="float: right;margin-top: 15px;">
-                <a href="javascript:void(0)" v-on:click="checkout">
+                <a href="javascript:void(0)" v-on:click="checkout" style="text-decoration:none;">
                     <img src="~/Content/images/cart-icon.png" width="50" />
                     <span class="badge badge-light">{{count}}</span>
                 </a>
@@ -51,8 +50,8 @@
 
     <div id="checkoutApp">
         <form id="checkoutForm" @@submit="submitForm" action="" method="post">
-            <div class="modal fade" id="checkoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-                <div class="modal-dialog" role="document" >
+            <div class="modal fade" id="checkoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+                <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Checkout</h5>
@@ -62,13 +61,13 @@
                         </div>
                         <div class="modal-body">
                             <div class="row">
-                                <button type="reset" class="btn-link red-text"  style="float:right;" v-on:click="reset()">Reset</button>
+                                <button type="reset" class="btn-link red-text" style="float:right;" v-on:click="reset()">Reset</button>
                                 <div class="col-sm-6">
                                     <h4>Items</h4>
                                     <ol>
                                         <li v-for="i in items" class="line-item">
                                             {{i.Title}} &nbsp; x {{i.Count}}
-                                            <button  type="button" class="btn-link red-text" v-on:click="removeItem(i)">Remove</button>
+                                            <button type="button" class="btn-link red-text" v-on:click="removeItem(i)">Remove</button>
                                         </li>
                                     </ol>
                                 </div>
@@ -76,39 +75,43 @@
                                     <h4>Payment Info</h4>
                                     <div style="margin-bottom:5px;">
                                         <label>Name: </label>
-                                        <input type="text" class="form-control" required/>
+                                        <input type="text" class="form-control" required />
                                     </div>
                                     <div style="margin-bottom:5px;">
-                                        <label>SSN: </label> 
-                                        <input type="text" class="form-control" required/>
+                                        <label>SSN: </label>
+                                        <input type="text" class="form-control" required />
                                     </div>
                                     <div style="margin-bottom:5px;">
                                         <label>Bank Routing: </label>
-                                        <input type="text" class="form-control" required/>
+                                        <input type="text" class="form-control" required />
                                     </div>
                                     <div style="margin-bottom:5px;">
-                                        <label>Credit Card #: </label> 
-                                        <input type="text" class="form-control" required/>
+                                        <label>Credit Card #: </label>
+                                        <input type="text" class="form-control" required />
                                     </div>
                                     <div style="margin-bottom:5px;">
                                         <label>CSC: </label>
-                                        <input type="text" class="form-control" required/>
+                                        <input type="text" class="form-control" required />
                                     </div>
                                 </div>
                             </div>
 
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                             <button type="submit" class="btn btn-primary">Place Order</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         </div>
                     </div>
                 </div>
             </div>
         </form>
     </div>
-
-
+    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/respond.min.js"></script>
+    @Scripts.Render("~/bundles/vendor")
     @Scripts.Render("~/bundles/app")
     @RenderSection("scripts", required: false)
 </body>
